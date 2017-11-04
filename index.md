@@ -1,5 +1,7 @@
 ## Research Interest
 
+Artificial Intelligence, Machine Learning and Computer Vision
+
 ## Projects
 
 ### Variational AutoEncoder and Generative Adversarial Networks
