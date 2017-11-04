@@ -1,3 +1,15 @@
+## Research Interest
+
+## Projects
+
+### Variational AutoEncoder and Generative Adversarial Network
+
+Tensorflow implementation of following papers:
+VAE: [Auto-Encoding Variational Bayes](https://arxiv.org/pdf/1312.6114.pdf)
+GAN: [Generative Adversarial Networks](https://arxiv.org/pdf/1406.2661.pdf)
+VAEGAN: [Autoencoding beyond pixels using a learned similarity metric](https://arxiv.org/pdf/1512.09300.pdf)
+
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/yuyingyeh/yuyingyeh.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
