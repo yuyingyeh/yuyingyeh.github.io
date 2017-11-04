@@ -2,15 +2,21 @@
 
 ## Projects
 
-### Variational AutoEncoder and Generative Adversarial Network
+### Variational AutoEncoder and Generative Adversarial Networks
 
-Tensorflow implementation of following papers:
+Tensorflow implementation of following papers: [GitHub](https://github.com/yuyingyeh/tensorflow-implementation-of-VAE-GAN-VAEGAN)
 
 VAE: [Auto-Encoding Variational Bayes](https://arxiv.org/pdf/1312.6114.pdf)
 
 GAN: [Generative Adversarial Networks](https://arxiv.org/pdf/1406.2661.pdf)
 
 VAEGAN: [Autoencoding beyond pixels using a learned similarity metric](https://arxiv.org/pdf/1512.09300.pdf)
+
+### Temporal Generative Nets
+
+Tensorflow implementation of following paper:
+
+[Temporal Generative Adversarial Nets with Singular Value Clipping](https://arxiv.org/pdf/1611.06624.pdf)
 
 
 ## Welcome to GitHub Pages
