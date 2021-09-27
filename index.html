@@ -47,7 +47,7 @@
 							<a target="_blank" href="https://scholar.google.com.tw/citations?user=b0YKBxgAAAAJ&hl=zh-TW" class="icon"><i class="fa fa-graduation-cap"></i></a>
 							<a target="_blank" href="mailto:yuyeh@eng.ucsd.edu" class="icon"><i class="fa fa-envelope-o"></i></a><br><br>
 							<a target="_blank" href="https://www.researchgate.net/profile/Yu_Ying_Yeh" class="button button-rounded button-flat" style="padding:10px"></i> RESEARCHGATE</a>
-							<a target="_blank" href="Resume_YuYing_202010.pdf" class="button button-rounded button-flat" style="padding:10px"></i> Resume</a>
+							<a target="_blank" href="Resume_YuYing_202109.pdf" class="button button-rounded button-flat" style="padding:10px"></i> Resume</a>
 							<!--
 							<a target="_blank" href="CV_YuYing_201903.pdf" class="button button-rounded button-flat" style="padding:10px"></i> CV (2 pages)</a>
 							<i class="fa fa-github-square" style="font-size:48px; padding:10px"></i>
@@ -116,6 +116,16 @@
 									</div>
 									<div class="6u 12u(mobile)">
 										<h3>Work Experience</h3>
+                                        <div class="row">
+											<div style="width:20%">
+												<span class="image fit"><img src="images/icon/nvidia.webp" alt="" /></span>
+											</div>
+											<div style="width:80%">
+												<h4 style="text-align:left; margin:5px">Research Internship, NVIDIA Inc.</h4>
+												<p style="text-align:left; line-height:1.5; margin:5px"><a target="_blank" href="https://www.nvidia.com/en-us/research/">NVIDIA Research</a></p>
+                                                <p style="text-align:left; line-height:1.5; margin:5px">Supervised by Dr. Ming-Yu Liu</p>
+											</div>
+										</div>
 										<div class="row">
 											<div style="width:20%">
 												<span class="image fit"><img src="images/icon/adobe.png" alt="" /></span>
@@ -123,7 +133,7 @@
 											<div style="width:80%">
 												<h4 style="text-align:left; margin:5px">Research Internship, Adobe Inc.</h4>
 												<p style="text-align:left; line-height:1.5; margin:5px"><a target="_blank" href="https://research.adobe.com">Adobe Research</a></p>
-
+                                                <p style="text-align:left; line-height:1.5; margin:5px">Supervised by Dr. Kalyan Sunkavalli</p>
 											</div>
 										</div>
 										<div class="row">
@@ -182,6 +192,23 @@
 						<p>Here are my recent research projects.</p>
 					</header>
 					<div class="container">
+                        <div class="row">
+							<div class="12u 12u(mobile)">
+								<section class="box style1">
+									<h3>OpenRooms: An Open Framework for Photorealistic Indoor Scene Datasets</h3>
+									<p>Zhengqin Li, Ting-Wei Yu, Shen Sang, Sarah Wang, Meng Song, Yuhan Liu, <a href="https://yuyingyeh.github.io/" style="font-weight:600; color:black; text-decoration: underline">Yu-Ying Yeh</a>, Rui Zhu, Nitesh Gundavarapu, Jia Shi, Sai Bi, Zexiang Xu, Hong-Xing Yu, Kalyan Sunkavalli, Miloš Hašan, Ravi Ramamoorthi, Manmohan Chandraker <br><span style="font-weight:600; color:red; ">(CVPR 2021 Oral Presentation)</span></p>
+									<div class="row">
+										<div class="5u 12u(mobile)">
+											<span class="image fit"><a target="_blank" href="https://arxiv.org/pdf/2007.12868.pdf"><img src="images/openrooms_teaser.png" alt="" /></a></span>
+											<p style="text-align:left">Full paper: <a target="_blank" href="https://arxiv.org/pdf/2007.12868.pdf">[ArXiv]</a> / <a target="_blank" href="https://vilab-ucsd.github.io/ucsd-openrooms/">[Project Page][Dataset]</a> </p>
+										</div>
+										<div class="7u 12u(mobile)">
+											<p style="text-align:justify">Large-scale photorealistic datasets of indoor scenes, with ground truth geometry, materials and lighting, are important for deep learning applications in scene reconstruction and augmented reality. The associated shape, material and lighting assets can be scanned or artist-created, both of which are expensive; the resulting data is usually proprietary. We aim to make the dataset creation process for indoor scenes widely accessible, allowing researchers to transform casually acquired scans to large-scale datasets with high-quality ground truth. We achieve this by estimating consistent furniture and scene layout, ascribing high quality materials to all surfaces and rendering images with spatially-varying lighting consisting of area lights and environment maps. We demonstrate an instantiation of our approach on the publicly available ScanNet dataset. Deep networks trained on our proposed dataset achieve competitive performance for shape, material and lighting estimation on real images and can be used for photorealistic augmented reality applications, such as object insertion and material editing. Importantly, the dataset and all the tools to create such datasets from scans will be released, enabling others in the community to easily build large-scale datasets of their own. </p>
+										</div>
+									</div>
+								</section>
+							</div>
+						</div>
 						<div class="row">
 							<div class="12u 12u(mobile)">
 								<section class="box style1">
@@ -190,7 +217,7 @@
 									<div class="row">
 										<div class="5u 12u(mobile)">
 											<span class="image fit"><a target="_blank" href="https://arxiv.org/abs/2004.10904"><img src="images/cvpr20_teaser.png" alt="" /></a></span>
-											<p style="text-align:left">Full paper: <a target="_blank" href="https://arxiv.org/abs/2004.10904">[ArXiv]</a> / <a target="_blank" href="http://cseweb.ucsd.edu/~viscomp/projects/CVPR20Transparent/">[Project Page]</a> / Code and Dataset: Coming Soon.</p>
+											<p style="text-align:left">Full paper: <a target="_blank" href="https://arxiv.org/abs/2004.10904">[ArXiv]</a> / <a target="_blank" href="http://cseweb.ucsd.edu/~viscomp/projects/CVPR20Transparent/">[Project Page][Code][Dataset]</a> </p>
 										</div>
 										<div class="7u 12u(mobile)">
 											<p style="text-align:justify">Recovering the 3D shape of transparent objects using a small number of unconstrained natural images is an ill-posed problem. Complex light paths induced by refraction and reflection have prevented both traditional and deep multiview stereo from solving this challenge. We propose a physically-based network to recover 3D shape of transparent objects using a few images acquired with a mobile phone camera, under a known but arbitrary environment map. Our novel contributions include a normal representation that enables the network to model complex light transport through local computation, a rendering layer that models refractions and reflections, a cost volume specifically designed for normal refinement of transparent shapes and a feature mapping based on predicted normals for 3D point cloud reconstruction. We render a synthetic dataset to encourage the model to learn refractive light transport across different views. Our experiments show successful recovery of high-quality 3D geometry for complex transparent shapes using as few as 5-12 natural images. </p>
