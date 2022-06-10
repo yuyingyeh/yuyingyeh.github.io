@@ -1,4 +1,4 @@
-/* This CSS is borrowed from https://dave.ml/blobgan/ */
+/* The below CSS is partially borrowed from https://dave.ml/blobgan/ */
 
 .material-symbols-rounded {
     font-variation-settings: 'FILL' 1,
@@ -18,54 +18,6 @@
 
 span.material-symbols-rounded {
     max-width: 25px;
-}
-
-.iconbutton {
-    padding: 0.1rem 0.3rem;
-    display: flex;
-    border: none !important;
-    background-color: #4B495B !important;
-    color: #f5ece5 !important;
-    font-family: 'GT Ultra', sans-serif !important;
-    font-weight: 400;
-    text-decoration: none !important;
-}
-
-.iconbutton span.material-symbols-rounded {
-    font-size: 1.5rem;
-    /* font-weight: 700; */
-}
-
-.playpause span.material-symbols-rounded {
-    font-variation-settings: 'wght' 700;
-
-
-}
-
-.iconbutton span.material-symbols-rounded:hover {
-    color: #faf6f2 !important;
-}
-
-.iconbutton:hover, .iconbutton:focus {
-    background-color: #2E2E38 !important;
-    border-color: none !important;
-    color: #faf6f2 !important;
-}
-
-.iconbutton:focus {
-
-}
-
-.iconbutton:active {
-    background-color: #09090B !important;
-
-}
-
-
-
-.autoplaytoggle span.material-symbols-rounded {
-
-    font-size: 1.25rem !important;
 }
 
 .linkscontainer {
@@ -137,15 +89,6 @@ span.material-symbols-rounded {
     /*--btn-bgc: 204, 97, 176;*/
 }
 
-.links a span.material-symbols-rounded {
-    /*margin-right: .25rem;
-}
-
-.links a:not(:last-child) {
-    /*margin-right: 20px;*/
-}
-
-
 .links .material-symbols-rounded {
     font-size: 1.25rem;
 }
@@ -153,4 +96,93 @@ span.material-symbols-rounded {
 
 .links i {
     font-size: 28px;
+}
+
+.teaser video {
+    max-width: 992px;
+    width: 100%;
+}
+
+.videowrapper {
+    float: none;
+    clear: both;
+    width: 100%;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height: 0;
+}
+
+.wrapwrap {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.videowrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* New */
+.zero-clipboard {
+    display: block;
+    position: relative;
+}
+
+.btn-clipboard {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    display: block;
+    padding: 5px 8px;
+    font-size: 12px;
+    color: #767676;
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid #e1e1e8;
+    border-radius: 0 4px 0 4px;
+}
+
+.btn-clipboard:hover {
+    color: #fff;
+    background-color: #D6818D;
+    border-color: #D6818D;
+}
+
+pre {
+    padding-right: 60px;
+}
+
+[data-clipboard-target] {
+    cursor: pointer;
+}
+
+[data-clipboard-target]:hover {
+    color: #276FBF !important;
+}
+
+.tooltip-inner {
+    white-space: nowrap;
+}
+
+/* Me */
+.bibtex {
+    background-color: rgba(26, 25, 31, 0.05);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    display: inline-block;
+    margin: 0 auto;
+    overflow-y: hidden;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+    font-family: 'Code', monospace;
 }

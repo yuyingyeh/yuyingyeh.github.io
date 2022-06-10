@@ -25,18 +25,45 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script> -->
     
     <script src="photoscene/app.js"></script>
+    <script src="photoscene/customized.js"></script>
+    <!-- <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=OHRWerP2USDtY12RQVeI1eQGIruU0J9-lBukFaoAKyw"></script> -->
 </head>
+
+<!-- <script>
+    //CLIPBOARD
+    function prepareClipboard() {
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        });
+
+        // $(".btn-clipboard").mouseleave(function () {
+        //     $(this).attr('title', "Copy to Clipboard").tooltip('fixTitle').parent().find('.tooltip .tooltip-inner').text("Copy to Clipboard");
+        // });
+
+        $(".btn-clipboard").mouseenter(function () {
+            $(this).attr('title', "Copy to Clipboard").tooltip('fixTitle').parent().find('.tooltip .tooltip-inner').text("Copy to Clipboard");
+        });
+
+        var client = new Clipboard("#cp-btn1");
+        client.on('success', function (e) {
+            e.clearSelection();
+            $("#cp-btn1").attr('title', "Copied to Clipboard!").tooltip('fixTitle').parent().find('.tooltip .tooltip-inner').tooltip('hide').text("Copied to Clipboard!")
+        });
+
+    }
+
+    prepareClipboard();
+</script> -->
 
 <body>
     <div class="container">
         <div class="row">
             <h1 class="col-md-12 text-center">
-                PhotoScene: 
-              <br/> Photorealistic Material and Lighting
-              <br/> Transfer for Indoor Scenes
+                <b>PhotoScene:</b> 
+              <br/> Photorealistic Material and Lighting Transfer for Indoor Scenes
               <br/><small>CVPR 2022</small>
             </h1>
         </div>
@@ -99,11 +126,25 @@
         <br/>
         <div class="linkscontainer">
             <div class="links mt-4">
-            <a href="https://openreview.net/pdf?id=KEZufsflq8p" target="_blank"><span>Paper</span></a>
+            <a href="https://openreview.net/pdf?id=KEZufsflq8p" target="_blank">
+                <span class="glyphicon glyphicon-file" style="margin-right:0.25em"></span>
+                <span>Paper</span>
+            </a>
             <!-- <a href="demo" target="_blank"><span>Demo</span></a> -->
-            <a href="https://github.com/ViLab-UCSD/PhotoScene" target="_blank"><span>Code (Coming Soon)</span></a>
+            <a href="https://github.com/ViLab-UCSD/PhotoScene" target="_blank">
+                <span class="glyphicon glyphicon-paperclip" style="margin-right:0.25em"></span>
+                <span>Code (Coming Soon)</span>
+            </a>
             <!-- <a href="#results"><span>Results</span></a> -->
-            <a href="#citation"><span>Cite</span></a>
+            <a href="#video">
+                <span class="glyphicon glyphicon-play" style="margin-right:0.25em"></span>
+                <span>Video</span></a>
+            <!-- <a href="#results">
+                    <span class="glyphicon glyphicon-pencil" style="margin-right:0.25em"></span>
+                    <span>Results</span></a> -->
+            <a href="#citation">
+                <span class="glyphicon glyphicon-heart-empty" style="margin-right:0.25em"></span>
+                <span>Cite</span></a>
             </div>
         </div>
         <div class="row" id="header_img">
@@ -112,45 +153,40 @@
                 <figcaption>
                 </figcaption>
             </figure> -->
-            <video class="col-md-8 col-md-offset-2" src="photoscene/figure_teaser_video.mp4" data-no-pause autoplay playsinline muted loop></video>
+            <!-- <video class="col-md-8 col-md-offset-2" src="photoscene/figure_teaser_video.mp4" data-no-pause autoplay playsinline muted loop></video> -->
         </div>
-        <!-- <div class="row"> -->
-        <!--     <div class="col&#45;md&#45;8 col&#45;md&#45;offset&#45;2 text&#45;center last"> -->
-        <!--         <iframe align="center" width="560" height="315" src="https://www.youtube.com/embed/GAe0qKKQY_I" frameborder="0" allowfullscreen></iframe> -->
-        <!--     </div> -->
-        <!-- </div> -->
+        <section class="teaser col-md-10 col-md-offset-1 text-justify">
+            <video src="photoscene/figure_teaser_video.mp4" data-no-pause autoplay playsinline muted loop></video>
+        </section>
+        
+
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-10 col-md-offset-1">
                 <h3>
                     Abstract
                 </h3>
                 <p class="text-justify">
-Most indoor 3D scene reconstruction methods focus on
-recovering 3D geometry and scene layout. In this work,
-we go beyond this to propose <em>PhotoScene</em>
-, a framework
-that takes input image(s) of a scene along with approximately aligned CAD geometry (either reconstructed automatically or manually specified) and builds a photorealistic digital twin with high-quality materials and similar lighting. We model scene materials using procedural
-material graphs; such graphs represent photorealistic and
-resolution-independent materials. We optimize the parameters of these graphs and their texture scale and rotation,
-as well as the scene lighting to best match the input image
-via a differentiable rendering layer. We evaluate our technique on objects and layout reconstructions from ScanNet,
-SUN RGB-D and stock photographs, and demonstrate that
-our method reconstructs high-quality, fully relightable 3D
-scenes that can be re-rendered under arbitrary viewpoints,
-zooms and lighting.
+                    Most indoor 3D scene reconstruction methods focus on
+                    recovering 3D geometry and scene layout. In this work,
+                    we go beyond this to propose <em>PhotoScene</em>, a framework
+                    that takes input image(s) of a scene along with approximately 
+                    aligned CAD geometry (either reconstructed automatically or 
+                    manually specified) and builds a photorealistic digital twin 
+                    with high-quality materials and similar lighting. We model 
+                    scene materials using procedural
+                    material graphs; such graphs represent photorealistic and
+                    resolution-independent materials. We optimize the parameters 
+                    of these graphs and their texture scale and rotation,
+                    as well as the scene lighting to best match the input image
+                    via a differentiable rendering layer. We evaluate our technique 
+                    on objects and layout reconstructions from ScanNet,
+                    SUN RGB-D and stock photographs, and demonstrate that
+                    our method reconstructs high-quality, fully relightable 3D
+                    scenes that can be re-rendered under arbitrary viewpoints,
+                    zooms and lighting.
                 </p>
             </div>
         </div>
-        <!-- <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
-                    Video
-                </h3>
-                <p class="text-justify">
-                    Video Here.
-                </p>
-            </div>
-        </div> -->
         <!-- <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
@@ -172,37 +208,87 @@ zooms and lighting.
                 </div>
             </div>
         </div> -->
+
+        <section class="teaser col-md-10 col-md-offset-1 text-justify" id="video">
+            <div class="row">
+                <h3>
+                    Video
+                </h3>
+                <div class="wrapwrap">
+                    <div class="videowrapper">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/w1gSGcPBA2U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- <section class="col-md-10 col-md-offset-1 text-justify" id="results">
+            <div class="row">
+                <h3>
+                    Results
+                </h3>
+                <div class="col-md-12 text-center" font-size="30px"> <b>ScanNet to OpenRooms</b> </div>
+                <div class="col-md-10 col-md-offset-1">
+                    
+                    
+
+
+                </div>
+            </div>
+        </section> -->
+
         <section id="citation">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-10 col-md-offset-1">
                 <h3>
                     BibTeX
                 </h3>
-                <div class="form-group col-md-11 col-md-offset-1">
-<textarea id="bibtex" class="form-control" readonly>
-@inproceedings{yeh2020photoscene,
+                <div class="col-md-12 col-md-offset-0">
+                    <div class="zero-clipboard" onmouseenter="onMouse()">
+                        <span onclick="copyToClipboard('.bibtex')" id="cp-btn1" class="btn-clipboard" data-toggle="tooltip"
+                        data-placement="top" data-original-title="Copy to Clipboard"
+                        data-clipboard-text="">Copy</span>
+                    </div>
+                    <pre class="bibtex">@inproceedings{yeh2020photoscene,
     title={PhotoScene: Photorealistic Material and Lighting Transfer for Indoor Scenes},
     author={Yeh, Yu-Ying and Li, Zhengqin and Hold-Geoffroy, Yannick and Zhu, Rui and Xu, Zexiang and Hašan, Miloš and Sunkavalli, Kalyan and Chandraker, Manmohan},
     booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
     year={2022}
-  }
-</textarea>
+}</pre> 
+
                 </div>
             </div>
         </div>
         </section>
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-10 col-md-offset-1">
                 <h3>
                     Acknowledgements
                 </h3>
                 <p class="text-justify">
                   We thank the anonymous CVPR reviewers for their valuable feedback.
                   We acknowledge support from NSF, Adobe, Qualcomm and Google.
-                  The website template was borrowed from <a target="_blank" href="http://mgharbi.com/">Michaël Gharbi</a>.
+                  The website template was partially borrowed from 
+                  <a target="_blank" href="https://groups.csail.mit.edu/graphics/rendernet/">project</a> and 
+                  <a target="_blank" href="https://dave.ml/blobgan">project</a>.
                 </p>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1 text-justify">
+                <p style="text-align:center;font-size:small;">
+                    <a href='https://clustrmaps.com/site/1bov4'  title='Visit tracker'>
+                        <img src='https://clustrmaps.com/map_v2.png?cl=786b6f&w=a&t=n&d=OHRWerP2USDtY12RQVeI1eQGIruU0J9-lBukFaoAKyw&co=ffffff&ct=808080&cmo=cdaa9d&cmn=d6818d'/>
+                    </a>
+                </p>
+                
+            </div>
+        </div>
+
+
+        
+
     </div>
 </body>
 </html>
