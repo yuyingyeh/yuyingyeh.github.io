@@ -32,32 +32,6 @@
     <!-- <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=OHRWerP2USDtY12RQVeI1eQGIruU0J9-lBukFaoAKyw"></script> -->
 </head>
 
-<!-- <script>
-    //CLIPBOARD
-    function prepareClipboard() {
-        $(function () {
-            $('[data-toggle="tooltip"]').tooltip()
-        });
-
-        // $(".btn-clipboard").mouseleave(function () {
-        //     $(this).attr('title', "Copy to Clipboard").tooltip('fixTitle').parent().find('.tooltip .tooltip-inner').text("Copy to Clipboard");
-        // });
-
-        $(".btn-clipboard").mouseenter(function () {
-            $(this).attr('title', "Copy to Clipboard").tooltip('fixTitle').parent().find('.tooltip .tooltip-inner').text("Copy to Clipboard");
-        });
-
-        var client = new Clipboard("#cp-btn1");
-        client.on('success', function (e) {
-            e.clearSelection();
-            $("#cp-btn1").attr('title', "Copied to Clipboard!").tooltip('fixTitle').parent().find('.tooltip .tooltip-inner').tooltip('hide').text("Copied to Clipboard!")
-        });
-
-    }
-
-    prepareClipboard();
-</script> -->
-
 <body>
     <div class="container">
         <div class="row">
@@ -126,7 +100,7 @@
         <br/>
         <div class="linkscontainer">
             <div class="links mt-4">
-            <a href="https://openreview.net/pdf?id=KEZufsflq8p" target="_blank">
+            <a href="https://openaccess.thecvf.com/content/CVPR2022/papers/Yeh_PhotoScene_Photorealistic_Material_and_Lighting_Transfer_for_Indoor_Scenes_CVPR_2022_paper.pdf" target="_blank">
                 <span class="glyphicon glyphicon-file" style="margin-right:0.25em"></span>
                 <span>Paper</span>
             </a>
@@ -139,10 +113,10 @@
             <a href="#video">
                 <span class="glyphicon glyphicon-play" style="margin-right:0.25em"></span>
                 <span>Video</span></a>
-            <!-- <a href="#results">
-                    <span class="glyphicon glyphicon-pencil" style="margin-right:0.25em"></span>
-                    <span>Results</span></a> -->
-            <a href="#citation">
+            <a href="#results">
+                <span class="glyphicon glyphicon-pencil" style="margin-right:0.25em"></span>
+                <span>Results</span></a>
+            <a href="#cite">
                 <span class="glyphicon glyphicon-heart-empty" style="margin-right:0.25em"></span>
                 <span>Cite</span></a>
             </div>
@@ -187,27 +161,6 @@
                 </p>
             </div>
         </div>
-        <!-- <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
-                    Downloads
-                </h3>
-                <div class="col-md-8 col-md-offset-2 text-center">
-                    <ul class="nav nav-pills nav-justified">
-                        <li>
-                            <a target="_blank" href="https://openreview.net/pdf?id=KEZufsflq8p">
-                                Paper
-                            </a>
-                        </li>
-                        <li>
-                            <a target="_blank" href="https://github.com/ViLab-UCSD/PhotoScene">
-                                Code (Coming Soon)
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div> -->
 
         <section class="teaser col-md-10 col-md-offset-1 text-justify" id="video">
             <div class="row">
@@ -222,44 +175,328 @@
             </div>
         </section>
 
-        <!-- <section class="col-md-10 col-md-offset-1 text-justify" id="results">
+        <section class="teaser col-md-10 col-md-offset-1 text-justify" id="framework">
+            <div class="row">
+                <h3>
+                    Framework
+                </h3>
+                <div class="wrapwrap">
+                    <div class="framework">
+                
+                        <img class="col-md-12 col-md-offset-0 text-justify" src='photoscene/framework.png'>
+                    </div>
+                </div>
+                <p>From the input photo(s) and 3D scene model, we estimate scene normals and lighting via an
+                    inverse rendering method, and compute material parts and align them to the model UVs and part segments. We model scene materials with
+                    procedural graphs. For each material part, we identify an appropriate graph from a collection and use a differentiable rendering module
+                    to optimize for the graph and UV transformation parameters. We also refine the initial lighting. Assigning the optimized materials and
+                    lighting to the input 3D model gives us our output PhotoScene—a renderable 3D scene that matches the appearance of the input photos.</p>
+                
+            </div>
+        </section>
+
+        <section class="col-md-10 col-md-offset-1 text-justify" id="results">
             <div class="row">
                 <h3>
                     Results
                 </h3>
-                <div class="col-md-12 text-center" font-size="30px"> <b>ScanNet to OpenRooms</b> </div>
-                <div class="col-md-10 col-md-offset-1">
-                    
-                    
 
+                <h4>
+                    <span class="glyphicon glyphicon-apple" style="margin-right:0.25em"></span>
+                    Transfer from
+                    <a href="http://www.scan-net.org/" target="_blank">ScanNet</a>
+                     (Multi-view) to 
+                    <a href="https://vilab-ucsd.github.io/ucsd-openrooms/" target="_blank">OpenRooms</a>
+                     (CAD model)
+                    <!-- : Video to CAD model transfer -->
+                </h4>
+                <p>OpenRooms provides aligned CAD models and layout w.r.t each ScanNet scene. Each material part is optimized w.r.t. the optimal view. </p>
+                <div class="t">
+                    <ul class="result">                  
+                      <li class="result"><p style="text-align:center">ScanNet</p>
+                        <div class="wrapwrap">
+                            <div class="videowrapper">
+                            <video src="photoscene/mp4s/scene0001_00_input.mp4" data-no-pause autoplay playsinline muted loop></video>
+                        </div>
+                        </div>
+                      </li>
+                      <li class="result"><p style="text-align:center">PhotoScene</p>
+                        <div class="wrapwrap">
+                            <div class="videowrapper">
+                            <video src="photoscene/mp4s/scene0001_00.mp4" data-no-pause autoplay playsinline muted loop></video>
+                        </div>
+                        </div>
+                      </li>
+                      <li class="result"><p style="text-align:center">Novel Light</p>
+                        <div class="wrapwrap">
+                            <div class="videowrapper">
+                            <video src="photoscene/mp4s/scene0001_00_novelLight.mp4" data-no-pause autoplay playsinline muted loop></video>
+                        </div>
+                        </div>
+                      </li>
 
-                </div>
+                      <li class="result"><p style="text-align:center">ScanNet</p>
+                        <div class="wrapwrap">
+                            <div class="videowrapper">
+                            <video src="photoscene/mp4s/scene0430_01_input.mp4" data-no-pause autoplay playsinline muted loop></video>
+                        </div>
+                        </div>
+                      </li>
+                      <li class="result"><p style="text-align:center">PhotoScene</p>
+                        <div class="wrapwrap">
+                            <div class="videowrapper">
+                            <video src="photoscene/mp4s/scene0430_01.mp4" data-no-pause autoplay playsinline muted loop></video>
+                        </div>
+                        </div>
+                      </li>
+                      <li class="result"><p style="text-align:center">Novel Light</p>
+                        <div class="wrapwrap">
+                            <div class="videowrapper">
+                            <video src="photoscene/mp4s/scene0430_01_novelLight.mp4" data-no-pause autoplay playsinline muted loop></video>
+                        </div>
+                        </div>
+                      </li>
+                    </ul>
+                    <ul class="result">                  
+                        <li class="result">
+                          <div class="wrapwrap">
+                              <div class="videowrapper">
+                              <video src="photoscene/mp4s/scene0435_02_input.mp4" data-no-pause autoplay playsinline muted loop></video>
+                          </div>
+                          </div>
+                        </li>
+                        <li class="result">
+                          <div class="wrapwrap">
+                              <div class="videowrapper">
+                              <video src="photoscene/mp4s/scene0435_02.mp4" data-no-pause autoplay playsinline muted loop></video>
+                          </div>
+                          </div>
+                        </li>
+                        <li class="result">
+                          <div class="wrapwrap">
+                              <div class="videowrapper">
+                                <video src="photoscene/mp4s/scene0435_02_novelLight.mp4" data-no-pause autoplay playsinline muted loop></video>
+                          </div>
+                          </div>
+                        </li>
+  
+                        <li class="result">
+                          <div class="wrapwrap">
+                              <div class="videowrapper">
+                              <video src="photoscene/mp4s/scene0582_01_input.mp4" data-no-pause autoplay playsinline muted loop></video>
+                          </div>
+                          </div>
+                        </li>
+                        <li class="result">
+                          <div class="wrapwrap">
+                              <div class="videowrapper">
+                              <video src="photoscene/mp4s/scene0582_01.mp4" data-no-pause autoplay playsinline muted loop></video>
+                          </div>
+                          </div>
+                        </li>
+                        <li class="result">
+                          <div class="wrapwrap">
+                              <div class="videowrapper">
+                              <video src="photoscene/mp4s/scene0582_01_novelLight.mp4" data-no-pause autoplay playsinline muted loop></video>
+                          </div>
+                          </div>
+                        </li>
+                      </ul>
+                      <!-- <ul class="result">                  
+                        <li class="result">
+                          <div class="wrapwrap">
+                              <div class="videowrapper">
+                              <video src="photoscene/mp4s/scene0609_02_input.mp4" data-no-pause autoplay playsinline muted loop></video>
+                          </div>
+                          </div>
+                        </li>
+                        <li class="result">
+                          <div class="wrapwrap">
+                              <div class="videowrapper">
+                              <video src="photoscene/mp4s/scene0609_02.mp4" data-no-pause autoplay playsinline muted loop></video>
+                          </div>
+                          </div>
+                        </li>
+                        <li class="result">
+                          <div class="wrapwrap">
+                              <div class="videowrapper">
+                                <video src="photoscene/mp4s/scene0609_02_novelLight.mp4" data-no-pause autoplay playsinline muted loop></video>
+                          </div>
+                          </div>
+                        </li>  
+                        <li class="result"></li>
+                        <li class="result"></li>
+                        <li class="result"></li>
+                      </ul> -->
+                  </div>
+
+                <h4>
+                    <span class="glyphicon glyphicon-apple" style="margin-right:0.25em"></span>
+                    Transfer from stock image (Single-view) to 
+                    manually-aligned objects (CAD model)
+                    <!-- : Video to CAD model transfer -->
+                </h4>
+                <p>CAD models and layout are aligned manually to a single image. </p>
+                <div class="t">
+                    <ul class="result">                  
+                      <li class="result"><p style="text-align:center">Image</p>
+                        <div class="wrapwrap">
+                            <div class="videowrapper">
+                                <img src='photoscene/mp4s/sceneAwesome.jpg'>
+                        </div>
+                        </div>
+                      </li>
+                      <li class="result"><p style="text-align:center">PhotoScene</p>
+                        <div class="wrapwrap">
+                            <div class="videowrapper">
+                            <video src="photoscene/mp4s/sceneAwesome.mp4" data-no-pause autoplay playsinline muted loop></video>
+                        </div>
+                        </div>
+                      </li>
+                      <li class="result"><p style="text-align:center">Novel Light</p>
+                        <div class="wrapwrap">
+                            <div class="videowrapper">
+                            <video src="photoscene/mp4s/sceneAwesome_novelLight.mp4" data-no-pause autoplay playsinline muted loop></video>
+                        </div>
+                        </div>
+                      </li>
+                      <li class="result"><p style="text-align:center">Image</p>
+                        <div class="wrapwrap">
+                            <div class="videowrapper">
+                              <img src='photoscene/mp4s/sceneClassicBedroom.jpg'>
+                        </div>
+                        </div>
+                      </li>
+                      <li class="result"><p style="text-align:center">PhotoScene</p>
+                        <div class="wrapwrap">
+                            <div class="videowrapper">
+                            <video src="photoscene/mp4s/sceneClassicBedroom.mp4" data-no-pause autoplay playsinline muted loop></video>
+                        </div>
+                        </div>
+                      </li>
+                      <li class="result"><p style="text-align:center">Novel Light</p>
+                        <div class="wrapwrap">
+                            <div class="videowrapper">
+                              <video src="photoscene/mp4s/sceneClassicBedroom_novelLight.mp4" data-no-pause autoplay playsinline muted loop></video>
+                        </div>
+                        </div>
+                      </li>  
+
+                    </ul>
+                    <!-- <ul class="result">                  
+                        <li class="result">
+                            <div class="wrapwrap">
+                                <div class="videowrapper">
+                                    <img src='photoscene/mp4s/sceneBedroomInterior.jpg'>
+                            </div>
+                            </div>
+                          </li>
+                          <li class="result">
+                            <div class="wrapwrap">
+                                <div class="videowrapper">
+                                <video src="photoscene/mp4s/sceneBedroomInterior.mp4" data-no-pause autoplay playsinline muted loop></video>
+                            </div>
+                            </div>
+                          </li>
+                          <li class="result">
+                            <div class="wrapwrap">
+                                <div class="videowrapper">
+                                <video src="photoscene/mp4s/sceneBedroomInterior_novelLight.mp4" data-no-pause autoplay playsinline muted loop></video>
+                            </div>
+                            </div>
+                          </li>
+                        <li class="result"></li>
+                        <li class="result"></li>
+                        <li class="result"></li>
+                      </ul> -->
+                      
+                  </div>
+
+                <!-- <div id="test_carousel"></div> -->
+                <h4>
+                    <span class="glyphicon glyphicon-apple" style="margin-right:0.25em"></span>
+                    Transfer from 
+                    <a target="_blank" href="https://rgbd.cs.princeton.edu/">SUN RGB-D</a>
+                     (Single-view) to 
+                    <a target="_blank" href="https://yinyunie.github.io/Total3D/">Total3D</a>
+                     (rough 3D model)
+                    <!-- : Video to CAD model transfer -->
+                </h4>
+                <p>Rough meshes and layout are reconstructed by Total3D. 
+                    <a target="_blank" href="https://bowenc0221.github.io/maskformer/">MaskFormer</a>
+                     is used to obtain the panoptic labels which enables <font color=#d0176d>automatic</font> transfer.</p>
+                <div class="t">
+                    <ul class="result">                  
+                      <li class="result"><p style="text-align:center">Image</p>
+                        <div class="wrapwrap">
+                            <div class="videowrapper">
+                                <img src='photoscene/mp4s/sceneTotal_246.jpg'>
+                        </div>
+                        </div>
+                      </li>
+                      <li class="result"><p style="text-align:center">PhotoScene</p>
+                        <div class="wrapwrap">
+                            <div class="videowrapper">
+                            <video src="photoscene/mp4s/sceneTotal_246.mp4" data-no-pause autoplay playsinline muted loop></video>
+                        </div>
+                        </div>
+                      </li>
+                      <li class="result"><p style="text-align:center">Novel Light</p>
+                        <div class="wrapwrap">
+                            <div class="videowrapper">
+                            <video src="photoscene/mp4s/sceneTotal_246_novelLight.mp4" data-no-pause autoplay playsinline muted loop></video>
+                        </div>
+                        </div>
+                      </li>
+                      <li class="result"><p style="text-align:center">Image</p>
+                        <div class="wrapwrap">
+                            <div class="videowrapper">
+                              <img src='photoscene/mp4s/sceneTotal_666.jpg'>
+                        </div>
+                        </div>
+                      </li>
+                      <li class="result"><p style="text-align:center">PhotoScene</p>
+                        <div class="wrapwrap">
+                            <div class="videowrapper">
+                            <video src="photoscene/mp4s/sceneTotal_666.mp4" data-no-pause autoplay playsinline muted loop></video>
+                        </div>
+                        </div>
+                      </li>
+                      <li class="result"><p style="text-align:center">Novel Light</p>
+                        <div class="wrapwrap">
+                            <div class="videowrapper">
+                              <video src="photoscene/mp4s/sceneTotal_666_novelLight.mp4" data-no-pause autoplay playsinline muted loop></video>
+                        </div>
+                        </div>
+                      </li>  
+
+                    </ul>
+                
             </div>
-        </section> -->
+        </section>
 
-        <section id="citation">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <h3>
-                    BibTeX
-                </h3>
-                <div class="col-md-12 col-md-offset-0">
-                    <div class="zero-clipboard" onmouseenter="onMouse()">
-                        <span onclick="copyToClipboard('.bibtex')" id="cp-btn1" class="btn-clipboard" data-toggle="tooltip"
-                        data-placement="top" data-original-title="Copy to Clipboard"
-                        data-clipboard-text="">Copy</span>
-                    </div>
-                    <pre class="bibtex">@inproceedings{yeh2020photoscene,
+        <section class="col-md-10 col-md-offset-1 text-justify" id="cite">
+            <div class="row">
+                    <h3>
+                        BibTeX
+                    </h3>
+                    <div class="col-md-12 col-md-offset-0">
+                        <div class="zero-clipboard" onmouseenter="onMouse()">
+                            <span onclick="copyToClipboard('.bibtex')" id="cp-btn1" class="btn-clipboard" data-toggle="tooltip"
+                            data-placement="top" data-original-title="Copy to Clipboard"
+                            data-clipboard-text="">Copy</span>
+                        </div>
+                        <pre class="bibtex">@inproceedings{yeh2020photoscene,
     title={PhotoScene: Photorealistic Material and Lighting Transfer for Indoor Scenes},
     author={Yeh, Yu-Ying and Li, Zhengqin and Hold-Geoffroy, Yannick and Zhu, Rui and Xu, Zexiang and Hašan, Miloš and Sunkavalli, Kalyan and Chandraker, Manmohan},
     booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
     year={2022}
 }</pre> 
 
-                </div>
+                    </div>
             </div>
-        </div>
         </section>
+
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <h3>

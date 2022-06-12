@@ -186,3 +186,60 @@ pre {
     word-wrap: break-word;
     font-family: 'Code', monospace;
 }
+
+/* video row */
+.t {
+    display: table;
+    width: 100%;
+    height: auto;
+    
+  }
+  
+  ul.result {
+    display: table-row;
+    
+  }
+  
+  li.result {
+    display: table-cell;
+    width: 16%;
+    padding: 1px;
+  }
+  
+  /* iframe {
+    display: block;
+  } */
+
+.videowrapper video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.videowrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.framework {
+    float: none;
+    clear: both;
+    width: 100%;
+    position: relative;
+    padding-bottom: 35.25%;
+    padding-top: 25px;
+    height: 0;
+}
+
+.framework img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
