@@ -226,6 +226,11 @@ pre {
     height: 100%;
 }
 
+.frameworkwrapper {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
 .framework {
     float: none;
     clear: both;
