@@ -61,6 +61,61 @@
           </tbody></table>
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
+            <tr onmouseout="texturedreamer_stop()" onmouseover="texturedreamer_start()">
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                    <div class="one">
+                        <div class="two" id='texturedreamer_video'><video  width=110% muted autoplay loop>
+                        <source src="https://texturedreamer.github.io/videos/plush_bear0_sofa_0_ours.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                        </video></div>
+                        <img src='images/texturedreamer_teaser.jpg' width="110%">
+                        <!-- <source src="https://texturedreamer.github.io/videos/plush_bear0_imgs_input.mp4" type="video/mp4"> -->
+                    </div>
+                    <!-- <div class="one">
+                    <div class="two" id='texturedreamer_image'><img src='https://texturedreamer.github.io/static/images/teaser.jpg' width="110%"></div>
+                    <img src='https://texturedreamer.github.io/static/images/teaser.jpg' width="110%">
+                    % https://texturedreamer.github.io/videos/plush_bear0_imgs_input.mp4
+                    </div> -->
+                    <script type="text/javascript">
+                    function texturedreamer_start() {
+                        document.getElementById('texturedreamer_video').style.opacity = "1";
+                    }
+    
+                    function texturedreamer_stop() {
+                        document.getElementById('texturedreamer_video').style.opacity = "0";
+                    }
+                    texturedreamer_stop()
+                    </script>
+                </td>
+                <td style="padding:20px;width:75%;vertical-align:middle">
+                                <a target="_blank" href="https://texturedreamer.github.io">
+                    <span class="papertitle">TextureDreamer: Image-guided Texture Synthesis through Geometry-aware Diffusion</span>  
+                  </a>
+                    <br>
+                    <strong>Yu-Ying Yeh</strong>,  
+                    <a target="_blank" rel="noopener noreferrer" href="https://jbhuang0604.github.io">Jia-Bin Huang</a>, 
+                    <a target="_blank" rel="noopener noreferrer" href="https://changilkim.com">Changil Kim</a>, 
+                    <a target="_blank" rel="noopener noreferrer" href="https://leixiao-ubc.github.io">Lei Xiao</a>, 
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.monkeyoverflow.com/about">Thu Nguyen-Phuoc</a>,
+                    <a target="_blank" rel="noopener noreferrer" href="https://nkhan2.github.io">Numair Khan</a>,
+                    <a target="_blank" rel="noopener noreferrer" href="https://holmes969.github.io">Cheng Zhang</a>,
+                    <a target="_blank" rel="noopener noreferrer" href="https://cseweb.ucsd.edu/~mkchandraker/">Manmohan Chandraker</a>,
+                    <a target="_blank" rel="noopener noreferrer" href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=xWD7ZRkAAAAJ&sortby=pubdate">Carl S Marshall</a>,
+                    <a target="_blank" rel="noopener noreferrer" href="http://flycooler.com">Zhao Dong</a>,
+                    <a target="_blank" rel="noopener noreferrer" href="https://scholar.google.com/citations?hl=zh-CN&user=Nxc2RbQAAAAJ&view_op=list_works&sortby=pubdate">Zhengqin Li</a>
+                    <br>
+                    <em>ArXiv</em>, 2024  
+                    <br>
+                    <a target="_blank" href="https://texturedreamer.github.io">project page</a> / 
+                    <a target="_blank" href="https://arxiv.org/abs/2401.09416">arxiv</a>
+                    <!-- <a target="_blank" href="https://youtu.be/uWSVpG0eKbU">video</a> -->
+                    <!-- <a target="_blank" href="http://imaginaire.cc/Lumos/">demo</a> -->
+                    <p></p>
+                    <p>TextureDreamer transfers photorealistic, high-fidelity, 
+                        and geometry-aware textures from 3-5 images to arbitrary 3D meshes. </p>
+                </td>
+              </tr>
+            
             <tr onmouseout="lumos_stop()" onmouseover="lumos_start()">
               <td style="padding:20px;width:25%;vertical-align:middle">
                   <div class="one">
